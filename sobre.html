@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sobre nós</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="imagex/png" href="Ferramentas Online.png"> 
+        <script defer src="app.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html"><img src="Ferramentas Online.png" alt="Ferramentas logo" class="logo"></a>
+            <button class="hamburguer"></button>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="formulario.html">Contatos</a></li>
+                <li> 
+                <a widght href="javascript:void(0)" onclick="share()" >
+                    <img src="compartilhar.png" alt="compartilhar" class="compartilhar" >    
+                </a>  
+                    </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="div-sobre">
+        <div class="gallery-container">
+            <div class="slide">
+                <img src="amigos.png" alt="Colegas de escola" width="150">
+            </div>
+            <div class="slide">
+                <img src="universidade.png" alt="Universidade onde estudamos" width="150">
+            </div>
+            <div class="slide">
+                <img src="trabalho.png" alt="Trabalho que precisamos fazer" width="150">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <br>
+
+        <h1>Quem Somos Nós</h1>
+        <br>
+        <p>
+            Nós somos dois entusiastas de tecnologia e colegas do Instituto Federal do Tocantins, unidos por uma paixão
+            compartilhada pelo desenvolvimento web. O nosso vínculo acadêmico e o interesse comum em aprimorar nossas
+            habilidades nos trouxeram a um projeto desafiador e empolgante de JavaScript.
+        </p>
+        <br>
+        <p>
+            Ao longo dessa jornada acadêmica, enfrentamos desafios significativos, mas, com determinação e colaboração,
+            superamos cada obstáculo. Nosso trabalho em JavaScript reflete não apenas o resultado de nossos esforços
+            conjuntos, mas também nossa dedicação em aprender e aplicar as melhores práticas no desenvolvimento web.
+        </p>
+        <br>
+        <p>
+            Estamos empolgados em compartilhar nosso conhecimento e os frutos do nosso trabalho, e ansiosos para
+            contribuir
+            para a comunidade de desenvolvedores. Juntos, transformamos desafios em conquistas, consolidando não apenas
+            nossa amizade, mas também nosso compromisso com a excelência no campo da programação.
+        </p>
+        <br>
+        <p>
+            Estamos prontos para enfrentar novos desafios, aprender continuamente e criar soluções inovadoras à medida
+            que continuamos a nossa jornada no vasto mundo da tecnologia.</p>
+        </p>
+    </div>
+
+    <script>
+        // Inicializa o índice do slide como 1
+        let slideIndex = 1;
+
+        // Chama a função showSlides com o índice do slide inicial
+        showSlides(slideIndex);
+
+        // Função para avançar ou retroceder para o próximo slide
+        function plusSlides(n) {
+            // Chama a função showSlides com o índice do slide atualizado
+            showSlides(slideIndex += n);
+        }
+
+        // Função para exibir os slides
+        function showSlides(n) {
+            let i;
+            // Obtém todos os elementos com a classe "slide"
+            const slides = document.getElementsByClassName("slide");
+
+            // Verifica se o novo índice do slide é maior que o número total de slides
+            // Se for verdadeiro, define o índice do slide como 1
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+
+            // Verifica se o novo índice do slide é menor que 1
+            // Se for verdadeiro, define o índice do slide como o último slide
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            // Oculta todos os slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Exibe o slide atual
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        // Adiciona um temporizador para avançar automaticamente os slides a cada 5 segundos (5000 milissegundos)
+        setInterval(function () {
+            plusSlides(1);
+        }, 5000);
+
+        /* Função para compartilhar o conteúdo da página (se o navegador suportar) */
+        function share() {
+            if (navigator.share !== undefined) {
+                navigator.share({
+                    title: 'Ferramentas online',
+                    text: 'Ferramentas uteis no seu dia a dia',
+                    url: 'https://wahbeneh.github.io/Ferramentas-Online/'
+                })
+                    .then(() => console.log('Compartilhamento bem-sucedido'))
+                    .catch((error) => console.log('Erro ao compartilhar', error));
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

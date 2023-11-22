@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="Ferramentas Online.png">
+    <title>Ferramentas Online</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav">
+            <a><img src="Ferramentas Online.png" alt="Ferramentas logo" class="logo"></a>
+            <button class="hamburguer"></button>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="formulario.html">Contatos</a></li>
+                <li> 
+                <a widght href="javascript:void(0)" onclick="share()" >
+                    <img src="compartilhar.png" alt="compartilhar" class="compartilhar" >    
+                </a>  
+                    </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="div-principal"><br>
+        <h1 class="titulos">Cálculos</h1>
+        <div>
+            <hr>
+        </div>
+        <br>
+        <div class="listagem-ferramentas">
+            <img src="calcularidade.png">
+            <div>
+                <h2 class="sub-titulos">Calcular Idade</h2>
+                <h3>Calcula a idade em anos</h3>
+            </div>
+        </div>
+        <form>
+            <input type="date" id="data_nascimento" name="data_nascimento" />
+            <br>
+            <br>
+            <button type="button" onclick="calcularIdade()">Calcular</button>
+            <br>
+            <br>
+            <input type="number" id="idade" name="idade" readonly />
+        </form>
+
+    </div>
+
+    <div class="div-principal"><br>
+        <h1 class="titulos">Manipulação de Texto</h1>
+        <div>
+            <hr>
+        </div>
+        <br>
+        <div class="listagem-ferramentas">
+            <img src="maiusculaseminusculas.png">
+            <div>
+                <h2 class="sub-titulos">Maiúsculas e Minúsculas</h2>
+                <h3>Converte para letras maiúsculas ou minúsculas</h3>
+            </div>
+        </div>
+        <form>
+            <textarea id="texto" cols="30" rows="10" onkeyup="converteTexto()"></textarea>
+            <br>
+            <br>
+            <select id="formato_texto" name="formato_texto" onchange="converteTexto()">
+                <option value="maiuscula" selected>Maiúsculas</option>
+                <option value="minuscula">Minúsculas</option>
+                <option value="primeiraletra">Primeira letra</option>
+            </select>
+            <br>
+            <br>
+            <textarea id="resultado" cols="30" rows="10" readonly></textarea></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+        </form>
+    </div>
+
+    <div class="div-principal"><br>
+        <h1 class="titulos">Sorteio de Lista</h1>
+        <div>
+            <hr>
+        </div>
+        <br>
+        <div class="listagem-ferramentas">
+            <img src="sorteio.png">
+            <div>
+                <h2 class="sub-titulos">Sorteio de Lista</h2>
+                <h3>Escolhe um nome aleatório presente em uma lista</h3>
+            </div>
+        </div>
+        <form>
+            <textarea id="lista_de_nomes" cols="30" rows="10"></textarea>
+            <br>
+            <br>
+            <button type="button" id="sortear" onclick="sorteio()">Sortear</button>
+            <br>
+            <br>
+            <input type="text" id="sorteado" readonly />
+        </form>
+
+    
+    </div>
+
+
+</body>
+
+</html>
